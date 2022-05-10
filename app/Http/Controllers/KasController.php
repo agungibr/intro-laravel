@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contact;
+use App\Models\Kas;
 
-class ContactController extends Controller
+class KasController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response    
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $contacts = Contact::paginate(2);
-        return view('admin/contacts/index', compact('contacts'));
+        $data = Kas::all();
+        return view('admin/kas/index')->with([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -25,9 +27,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contacts', [
-            "title" => "Contacts"
-        ]);
+        return view('admin/kas/create');
     }
 
     /**
@@ -38,11 +38,10 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $contact = Contact::create($request->all());
-        $contact->save();
+        $data = $request->except(['_token']);
+        Kas::insert($data);
+        return redirect('/admin/home');
 
-        return redirect()->route('contacts.create');
     }
 
     /**
@@ -53,7 +52,10 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Kas::findOrFail($id);
+        return view('admin/kas/show')->with([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -64,8 +66,7 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $contact = Contact::findOrFail($id);
-        return view('admin/contacts/edit', compact('contact'));
+        //
     }
 
     /**
@@ -77,11 +78,10 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $contact = Contact::findOrFail($id);
-        $contact->update($request->all());
-        $contact->save();
-
-        return redirect()->route('contacts.index');
+        $kas = Kas::findOrFail($id);
+        $data = $request->except(['_token']);
+        $kas->update($data);
+        return redirect('/admin/home');
     }
 
     /**
@@ -92,9 +92,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        $contact = Contact::findOrFail($id);
-        $contact->delete();
-
-        return redirect()->route('contacts.index');
+        $kas = Kas::findOrFail($id);
+        $kas->delete();
+        return redirect('/admin/home');
     }
 }

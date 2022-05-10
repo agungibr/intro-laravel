@@ -23,9 +23,7 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="{{ asset('admin/images/icon/logo.png')}}" alt="CoolAdmin">
-                            </a>
+                            <img src="{{ asset('admin/images/icon/logo1.png')}}" alt="PT VILLANET">
                         </div>
                         <div class="login-form">
                             <form action="{{route('login')}}" method="post">
@@ -47,12 +45,7 @@
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
-                                </div>
+
                             </form>
                             <div class="register-link">
                                 <p>

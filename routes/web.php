@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\KasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,32 +19,15 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About",
-        "nama" => "Jadon Sancho",
-        "email" => "3103120008@student.smktelkom-pwt.sch.id",
-        "gambar" => "sancho.jpeg"
-    ]);
-});
-
-Route::get('/gallery', function () {
-    return view('gallery', [
-    "title" => "Gallery"
-    ]);
-});
-
-// Route::resource('/contacts', ContactController::class); 
-Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
-Route::post('/contacts/store', [ContactController::class, 'store'])->name('contacts.store');
-
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/contacts/index', [ContactController::class, 'index'])->name('contacts.index');
-    Route::get('/contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
-    Route::post('/contacts/{id}/update', [ContactController::class, 'update'])->name('contacts.update');
-    Route::get('/contacts/{id}/destroy', [ContactController::class, 'destroy'])->name('contacts.destroy');
+    Route::get('/index', [KasController::class, 'index'])->name('kaskantor.index');
+    Route::get('/create', [KasController::class, 'create'])->name('kaskantor.create');
+    Route::post('/store', [KasController::class, 'store'])->name('kaskantor.store');
+    Route::get('/{id}/show', [KasController::class, 'show'])->name('kaskantor.show');
+    Route::post('/{id}/update', [KasController::class, 'update'])->name('kaskantor.update');
+    Route::get('/{id}/destroy', [KasController::class, 'destroy'])->name('kaskantor.destroy');
 
 });
