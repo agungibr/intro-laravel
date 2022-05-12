@@ -8,7 +8,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+<<<<<<< HEAD
     <title>Sancho   | {{ $title }}</title>
+=======
+    <title>PT. Villanet   | {{ $title }}</title>
+>>>>>>> bc092720ee2f58d3c27ceb3f9c4731f75a4d4d31
   </head>
   <body>
 
