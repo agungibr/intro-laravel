@@ -11,6 +11,7 @@
 
     <!-- Title Page-->
     <title>Register</title>
+
     @include('partials/css')
 
 </head>
@@ -22,7 +23,9 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <img src="{{ asset('admin/images/icon/logo1.png')}}" alt="PT VILLANET">
+                            <a href="#">
+                                <img src="{{ asset('admin/images/icon/logo.png')}}" alt="CoolAdmin">
+                            </a>
                         </div>
                         <div class="login-form">
                             <form action="{{route('register')}}" method="post">
@@ -45,15 +48,21 @@
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
-                                        <input type="checkbox" name="aggree">Agree the terms and policy
+                                        <input type="checkbox" name="agree">Agree the terms and policy
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
+                                <div class="social-login-content">
+                                    <div class="social-button">
+                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
+                                    </div>
+                                </div>
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Already have account?
-                                    <a href="{{route('login')}}">Sign In</a>
+                                    Already have an account?
+                                    <a href="{{route('login')}}">Login Here</a>
                                 </p>
                             </div>
                         </div>

@@ -13,30 +13,32 @@
     <title>Dashboard</title>
 
     @include('partials/css');
+    
 </head>
+
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-        @include('partials/header-mobile')
-        <!-- END HEADER MOBILE-->
+            @include('partials/header-mobile')
 
         <!-- MENU SIDEBAR-->
-        @include('partials/sidebar')
-        <!-- END MENU SIDEBAR-->
+            @include('partials/sidebar')
 
         <!-- PAGE CONTAINER-->
-        <div class="page-container">
-            <!-- HEADER DESKTOP-->
+            <div class="page-container">
+           
+        <!-- HEADER DESKTOP-->
             @include('partials/header')
-            <!-- HEADER DESKTOP-->
 
-            <!-- MAIN CONTENT-->
+        <!-- MAIN CONTENT-->
             @yield('content')
-            <!-- END MAIN CONTENT-->
-            <!-- END PAGE CONTAINER-->
+
         </div>
+
     </div>
+
     @include('partials/script')
+
 </body>
 
 </html>

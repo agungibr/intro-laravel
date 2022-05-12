@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-@extends('layouts.main')
-
-@section('container')
-    <h1> Halaman Home </h1>
-@endsection
-=======
 @extends('layouts.app')
 
 @section('content')
@@ -28,4 +21,3 @@
     </div>
 </div>
 @endsection
->>>>>>> bc092720ee2f58d3c27ceb3f9c4731f75a4d4d31

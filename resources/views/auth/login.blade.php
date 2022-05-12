@@ -23,7 +23,9 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <img src="{{ asset('admin/images/icon/logo1.png')}}" alt="PT VILLANET">
+                            <a href="#">
+                                <img src="{{ asset('admin/images/icon/logo.png')}}" alt="CoolAdmin">
+                            </a>
                         </div>
                         <div class="login-form">
                             <form action="{{route('login')}}" method="post">
@@ -41,16 +43,21 @@
                                         <input type="checkbox" name="remember">Remember Me
                                     </label>
                                     <label>
-                                        <a href="#">Forgotten Password?</a>
+                                        <a href="#">Forgot Password?</a>
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-
+                                <div class="social-login-content">
+                                    <div class="social-button">
+                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
+                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
+                                    </div>
+                                </div>
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't you have account?
-                                    <a href="{{route('register')}}">Register</a>
+                                    Don't have an account?
+                                    <a href="{{route('register')}}">Register Here</a>
                                 </p>
                             </div>
                         </div>
